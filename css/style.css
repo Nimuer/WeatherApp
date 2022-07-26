@@ -133,3 +133,8 @@ h3 {
 .temp-variant:focus {
   color: #fff;
 }
+.open-sourse {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+}
