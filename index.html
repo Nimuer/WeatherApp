@@ -13,10 +13,10 @@
       crossorigin="anonymous"
     />
     <!-- Fontawesome -->
-    <script
+    <!-- <script
       src="https://kit.fontawesome.com/c78e5b92c5.js"
       crossorigin="anonymous"
-    ></script>
+    ></script> -->
     <!-- Googlefonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,96 +26,75 @@
     />
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css" />
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <!-- BODY -->
   <body>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <div class="container matt-glass">
-      <form class="field-form" id="input-form">
-        <div class="form-group">
-          <label></label>
-          <input
-            type="text"
-            class="form-control"
-            id="input-city"
-            aria-describedby="textHelp"
-            placeholder="Enter a city name"
-          />
+      <!-- Input and button -->
+      <div class="app-wrap">
+        <div class="weather-app">
+          <form class="field-form" id="input-form">
+            <div class="form-group">
+              <label></label>
+              <input
+                type="search"
+                class="form-control"
+                id="input-city"
+                aria-describedby="textHelp"
+                placeholder="Enter a city name"
+                autocomplete="off"
+              />
+            </div>
+            <button type="submit" class="btn btn-primary" id="search-button">
+              Search
+            </button>
+            <button type="reset" class="btn btn-success" id="current-location">
+              Current
+            </button>
+          </form>
+          <!-- Main temp info -->
+          <div class="thumb">
+            <div class="data-now">
+              <h1 class="current-location" id="city"></h1>
+              <h2 id="date">Friday</h2>
+              <p class="current-weather" id="description"></p>
+            </div>
+            <div class="clearfix temperature-now">
+              <!-- <i class="fa-solid fa-cloud"></i> -->
+              <img
+                src=""
+                alt="Clear"
+                id="icon"
+                class="float-left"
+                width="124"
+              />
+              <span class="temperature-current" id="temperature-current"
+                >°</span
+              >
+              <span
+                ><a href="#" class="temp-variant" id="celcius-temp">°C</a
+                ><span class="temp-variant">|</span
+                ><a href="#" class="temp-variant" id="fahrenheit-temp"
+                  >°F</a
+                ></span
+              >
+              <p class="all-day-temp">
+                <span id="temp-max">Day 24°</span>
+                <span id="temp-min">Night 16°</span>
+              </p>
+            </div>
+            <div class="temp-description">
+              <ul class="temp-text">
+                <li>Humidity: <span id="humidity"></span>%</li>
+                <li>Wind speed: <span id="wind"></span> km/h</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Forecast -->
+          <div class="weatherforecast" id="forecast"></div>
         </div>
-        <button type="submit" class="btn btn-primary" id="search-button">
-          Search
-        </button>
-        <button type="reset" class="btn btn-success" id="current-location">
-          Current
-        </button>
-      </form>
-      <div class="thumb">
-        <div class="data-now">
-          <h1 class="current-location" id="city-name-chng">Odessa</h1>
-          <h2 id="current-date">Friday 0:53</h2>
-          <p class="current-weather" id="description">Mostly Cloudly</p>
-        </div>
-        <div class="temperature-now">
-          <i class="fa-solid fa-cloud"></i>
-          <span class="temperature-current" id="temperature-current">18°</span>
-          <span
-            ><a href="#" class="temp-variant" id="celsius-temp">°C</a
-            ><span class="temp-variant">|</span
-            ><a href="#" class="temp-variant" id="fahrenheit-temp">°F</a></span
-          >
-          <p class="all-day-temp">
-            <span id="temp-max">Day 24°</span>
-            <span id="temp-min">Night 16°</span>
-          </p>
-        </div>
-        <div class="temp-description">
-          <p class="temp-text" id="humidity">Humidity: 90%</p>
-          <p id="wind-speed">Wind: 14km/h</p>
-        </div>
-      </div>
-      <div>
-        <ul>
-          <li>
-            <h3>Sat</h3>
-            <i class="fa-solid fa-cloud-sun icon"></i>
-            <span>
-              <i class="fa-regular fa-sun small-icon"></i>25°
-              <i class="fa-regular fa-moon small-icon"></i>17°</span
-            >
-          </li>
-          <li>
-            <h3>Sun</h3>
-            <i class="fa-solid fa-cloud-sun icon"></i>
-            <span>
-              <i class="fa-regular fa-sun small-icon"></i>26°
-              <i class="fa-regular fa-moon small-icon"></i>18°</span
-            >
-          </li>
-          <li>
-            <h3>Mon</h3>
-            <i class="fa-solid fa-sun fill icon"></i>
-            <span>
-              <i class="fa-regular fa-sun small-icon"></i>27°
-              <i class="fa-regular fa-moon small-icon"></i>19°</span
-            >
-          </li>
-          <li>
-            <h3>Thu</h3>
-            <i class="fa-solid fa-cloud-sun icon"></i>
-            <span
-              ><i class="fa-regular fa-sun small-icon"></i>27°
-              <i class="fa-regular fa-moon small-icon"></i>17°</span
-            >
-          </li>
-          <li>
-            <h3>Wed</h3>
-            <i class="fa-solid fa-sun fill icon"></i>
-            <span>
-              <i class="fa-regular fa-sun small-icon"></i>27°
-              <i class="fa-regular fa-moon small-icon"></i>19°</span
-            >
-          </li>
-        </ul>
       </div>
     </div>
     <a
@@ -125,6 +104,6 @@
       class="open-sourse"
       >Open sourse code</a
     ><span class="open-sourse"> by Irina Haran</span>
-    <script src="./js/index.js"></script>
+    <script src="./js/app.js"></script>
   </body>
 </html>
